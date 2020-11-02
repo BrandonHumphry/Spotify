@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
+import Player from "./Player";
 
 // just an instance to reuse shell from SpotifyApi
 const spotify = new SpotifyWebApi();
@@ -31,8 +32,8 @@ function App() {
 
     console.log("I HAVE A TOKEN", token);
   }, []);
-
-  return <div className="app">{token ? <h1>logged in</h1> : <Login />}</div>;
+  //  if we have a token, render the player page, if not, go to Login
+  return <div className="app">{token ? <Player /> : <Login />}</div>;
 }
 
 export default App;
