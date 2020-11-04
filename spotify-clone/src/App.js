@@ -47,7 +47,11 @@ function App() {
   console.log("USER", user);
   console.log("TOKEN", token);
   //  if we have a token, render the player page, if not, go to Login
-  return <div className="app">{token ? <Player /> : <Login />}</div>;
+  return (
+    <div className="app">
+      {token ? <Player spotify={spotify} /> : <Login />}
+    </div>
+  );
 }
 
 export default App;
