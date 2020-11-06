@@ -4,7 +4,9 @@ import "./SidebarOption.css";
 function SidebarOption({ title, Icon }) {
   return (
     <div className="sidebarOption">
-      <p>{title}</p>
+      {Icon && <Icon className="sidebarOption__icon"></Icon>}
+      {/* if we have an icon, render it in h4, otherwise render it in a paragraph title */}
+      {Icon ? <h4>{title}</h4> : <p>{title}</p>}
     </div>
   );
 }
