@@ -2,10 +2,10 @@ export const initialState = {
   user: null,
   playlists: [],
   playing: false,
-  item: null,
+  item: null
   // remove token before pushing app
-  token:
-    "BQB7vn309F0yVizW2lVjty87iFeNgb2vEpLDErmbCp0dN_7oIkmLDN-RYwD0R_JgoPYq3eKcnWNfikGHXBHlHIUybEDom4VNJXxEX9xkUPzt7mKNyBP5ETqjve3VsoQdxI3bbua3F1G4DxXbxYcwPYTVLdVur-c_rqd5YJA3UhlgRiDg"
+  // token:
+  //   "BQB7vn309F0yVizW2lVjty87iFeNgb2vEpLDErmbCp0dN_7oIkmLDN-RYwD0R_JgoPYq3eKcnWNfikGHXBHlHIUybEDom4VNJXxEX9xkUPzt7mKNyBP5ETqjve3VsoQdxI3bbua3F1G4DxXbxYcwPYTVLdVur-c_rqd5YJA3UhlgRiDg"
 };
 
 // state = how it currently looks, action = set the user, currently playing, etc
@@ -26,6 +26,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         token: action.token
+      };
+
+    case "SET PLAYLISTS":
+      return {
+        ...state,
+        playlists: action.playlists
       };
     // return original state if the action above doesn't happen
     default:
